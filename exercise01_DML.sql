@@ -1,4 +1,3 @@
-
 -- Creament de la base de dades
 CREATE DATABASE db_empresa;
 
@@ -9,7 +8,7 @@ USE db_empresa;
 CREATE TABLE clients (
     dni VARCHAR(9) PRIMARY KEY,
     nom VARCHAR(50),
-    direccio VARCHAR(50),
+    direccio VARCHAR(50)
 );
 
 -- Creació de la taula pagaments_pendents
