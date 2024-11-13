@@ -14,9 +14,9 @@ The exercises cover topics such as:
 
 💡 Requirements
 
-MySQL / MariaDB
+- MySQL / MariaDB
 
-Basic knowledge of SQL
+- Basic knowledge of SQL
 
 🚀 Objective
 The goal is to reinforce the knowledge acquired in class through hands-on exercises and real-world problem-solving in database management and data security.
