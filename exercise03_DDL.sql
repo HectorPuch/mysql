@@ -28,8 +28,8 @@ DESCRIBE assignatures;
 CREATE TABLE IF NOT EXISTS matriculacions (
     IdMatriculacions INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     any_academic CHAR(9),
-    NumMatricula VARCHAR(7) NULL,
-    Codi VARCHAR(10) NULL,
+    NumMatricula VARCHAR(7),
+    Codi VARCHAR(10),
     FOREIGN KEY (NumMatricula) REFERENCES alumnes(NumMatricula) ON DELETE SET NULL ON UPDATE CASCADE,
     FOREIGN KEY (Codi) REFERENCES assignatures(Codi) ON DELETE SET NULL ON UPDATE CASCADE
 );
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS professors (
     ID_P INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     NIF_P VARCHAR(9) UNIQUE,
     Nom VARCHAR(15), 
-    Especialitat VARCHAR(10) NULL,
+    Especialitat VARCHAR(10),
     Telefon CHAR(9),
     FOREIGN KEY (Especialitat) REFERENCES assignatures(Codi) ON DELETE SET NULL ON UPDATE CASCADE 
 );
