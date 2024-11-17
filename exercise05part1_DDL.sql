@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS assumptes (
     Periode DATE,
     Estat ENUM('actiu', 'inactiu') DEFAULT 'actiu',
     IdClients INT UNSIGNED,
-    FOREIGN KEY (IdClients) REFERENCES clients(IdClients)
+    FOREIGN KEY (IdClients) REFERENCES clients(IdClients) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 DESCRIBE assumptes;
