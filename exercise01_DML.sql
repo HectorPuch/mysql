@@ -31,17 +31,17 @@ DESCRIBE pagaments_pendents;
 -- Inserim un client i dos pagaments pendents
 INSERT INTO clients VALUES ('55667788G', 'Pikachu', 'C\ Pueblo paleta, 22');
 
-INSERT INTO pagaments_pendents (Dni, Import) VALUES ('55667788G', 467);
-INSERT INTO pagaments_pendents (Dni, Import) VALUES ('55667788G', 56.7);
+INSERT INTO pagaments_pendents (dni, import) VALUES ('55667788G', 467);
+INSERT INTO pagaments_pendents (dni, import) VALUES ('55667788G', 56.7);
 
 -- a) Intentem esborrar el client i no es possible
 
-DELETE FROM clients WHERE nom = 'Pikachu';
+DELETE FROM clients WHERE dni = '55667788G';
 
 -- b) Intentem modificar el dni del client i no ho permet
 
-UPDATE clients SET Dni = '56894619Y' WHERE Nom = 'Pikachu';
+UPDATE clients SET dni = '11223344F' WHERE dni = '55667788G';
 
 -- c) Intentem esborrar la taula clients i tampoc podem
 
-DELETE FROM clients;
+DROP TABLE clients;
