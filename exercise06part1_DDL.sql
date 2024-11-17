@@ -21,7 +21,7 @@ CREATE TABLE animals (
     PaisOrigenAnimals VARCHAR(43),
     Continent VARCHAR(9),
     IdZoologics INT UNSIGNED,
-    FOREIGN KEY (IdZoologics) REFERENCES zoologics(IdZoologics)
+    FOREIGN KEY (IdZoologics) REFERENCES zoologics(IdZoologics) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 DESCRIBE animals;
@@ -33,7 +33,7 @@ CREATE TABLE especies (
     Familia VARCHAR(14),
     EnPerillExtincio VARCHAR(40),
     IdAnimals INT UNSIGNED,
-    FOREIGN KEY (IdAnimals) REFERENCES animals(IdAnimals)
+    FOREIGN KEY (IdAnimals) REFERENCES animals(IdAnimals) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 DESCRIBE especies;
