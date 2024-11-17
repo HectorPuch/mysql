@@ -13,18 +13,6 @@ CREATE TABLE zoologics (
 
 DESCRIBE zoologics;
 
-CREATE TABLE especies (
-    IdEspecies INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    NomVulgar VARCHAR(21),
-    NomCientific VARCHAR(22),
-    Familia VARCHAR(14),
-    EnPerillExtincio VARCHAR(40),
-    IdZoologics INT UNSIGNED,
-    FOREIGN KEY (IdZoologics) REFERENCES zoologics(IdZoologics)
-);
-
-DESCRIBE especies;
-
 CREATE TABLE animals (
     IdAnimals INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     NumIdentificacio VARCHAR(9),
@@ -32,8 +20,21 @@ CREATE TABLE animals (
     AnyNaixement DATE,
     PaisOrigenAnimals VARCHAR(43),
     Continent VARCHAR(9),
-    IdEspecies INT UNSIGNED,
-    FOREIGN KEY (IdEspecies) REFERENCES especies(IdEspecies)
+    IdZoologics INT UNSIGNED,
+    FOREIGN KEY (IdZoologics) REFERENCES zoologics(IdZoologics)
 );
 
 DESCRIBE animals;
+
+CREATE TABLE especies (
+    IdEspecies INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    NomVulgar VARCHAR(21),
+    NomCientific VARCHAR(22),
+    Familia VARCHAR(14),
+    EnPerillExtincio VARCHAR(40),
+    IdAnimals INT UNSIGNED,
+    FOREIGN KEY (IdAnimals) REFERENCES animals(IdAnimals)
+);
+
+DESCRIBE especies;
+
