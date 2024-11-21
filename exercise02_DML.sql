@@ -24,7 +24,7 @@ DELETE FROM clients WHERE dni = '55667788G';
 SELECT * FROM pagaments_pendents WHERE dni = '55667788G';
 
 -- b) Tornem a inserir el client i modifiquem el seu dni; verifiquem que s'ha canviat el dni de la taula pagaments_pendents.
-INSERT INTO clients (dni) VALUES ('55667788G', 'Pikachu', 'C\ Pueblo paleta, 22');
+INSERT INTO clients VALUES ('55667788G', 'Pikachu', 'C\ Pueblo paleta, 22');
 
 UPDATE clients SET dni = '11223344F' WHERE dni = '55667788G';
 
