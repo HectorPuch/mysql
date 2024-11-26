@@ -14,7 +14,7 @@ SELECT * FROM empleats;
 
 -- c) Estableix a 50000€ el sou dels empleats que han nascut a Barcelona
 
-UPDATE empleats SET Salari = 50000 WHERE CodiLocalitats = (SELECT CodiLocalitats FROM localitats WHERE NomLocalitats = 'Barcelona')
+UPDATE empleats SET Salari = 50000 WHERE CodiLocalitats = (SELECT CodiLocalitats FROM localitats WHERE NomLocalitats = 'Barcelona');
 
 SELECT * FROM empleats;
 
