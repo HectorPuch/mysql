@@ -33,3 +33,15 @@ SELECT localitats.CodiLocalitats, localitats.NomLocalitats FROM localitats LEFT 
 -- i) Extreure el nom i codi de les regions que tenen més d'una província associada
 
 SELECT regions.NomRegions, regions.NomRegions FROM regions JOIN provincies ON regions.NomRegions = provincies.NomRegions GROUP BY regions.NomRegions HAVING COUNT(provincies.CodiProvincies) > 1;
+
+-- j) Extreure el nombre total d'empleats agrupats per cada localitat
+
+SELECT localitats.NomLocalitats, COUNT(empleats.ID_E) AS NombreEmpleats FROM localitats LEFT JOIN empleats ON localitats.CodiLocalitats = empleats.CodiLocalitats GROUP BY localitats.CodiLocalitats;
+
+-- k) Extreure el nom dels empleats que pertanyen a la regió "Comunitat Valenciana"
+
+SELECT empleats.Nom FROM empleats JOIN localitats ON empleats.CodiLocalitats = localitats.CodiLocalitats JOIN provincies ON localitats.CodiProvincies = provincies.CodiProvincies JOIN regions ON provincies.NomRegions = regions.NomRegions WHERE regions.NomRegions = 'Comunitat Valenciana';
+
+-- l) Extreure les regions que no tenen cap empleat assignat
+
+SELECT regions.NomRegions FROM regions LEFT JOIN provincies ON regions.NomRegions = provincies.NomRegions LEFT JOIN localitats ON provincies.CodiProvincies = localitats.CodiProvincies LEFT JOIN empleats ON localitats.CodiLocalitats = empleats.CodiLocalitats GROUP BY regions.NomRegions HAVING COUNT(empleats.ID_E) = 0;
