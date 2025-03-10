@@ -65,7 +65,7 @@ CREATE TABLE objectes (
 	tipus VARCHAR(15)
 );
 
-SELECT * FROM lorule.objectes;
+SELECT * FROM objectes;
 
 -- No podem consultar perque no tenim permisos de consulta només de creació de taules.
 
