@@ -47,7 +47,7 @@ SELECT
 	WHERE Db='hyrule'\G
 
 -- b) Amb la taula tables de la base de dades information_schema consulta les taules creades al SGBD. Crea la consulta SELECT que retorni el mateix resultat que fent un SHOW TABLES FROM 'hyrule'.
-SELECT TABLE AS 'Tables_in_hyrule' FROM information_schema.tables WHERE TABLE_SCHEMA = 'hyrule';
+SELECT Table_name AS 'Tables_in_hyrule' FROM information_schema.tables WHERE TABLE_SCHEMA = 'hyrule';
 
 -- c) Consulta el nombre de files que té cada taula de la base de dades hyrule.
 SELECT Table_name, Table_rows FROM information_schema.tables WHERE TABLE_SCHEMA = 'hyrule';
