@@ -53,4 +53,4 @@ SELECT TABLE AS 'Tables_in_hyrule' FROM information_schema.tables WHERE TABLE_SC
 SELECT Table_name, Table_rows FROM information_schema.tables WHERE TABLE_SCHEMA = 'hyrule';
 
 -- d) Mostra les columnes de la taula armes de la base de dades hyrule.
-SHOW COLUMNS FROM armes;
+SELECT Column_name FROM information_schema.columns WHERE TABLE_SCHEMA = 'hyrule' AND TABLE_NAME = 'armes';
